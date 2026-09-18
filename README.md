@@ -1,6 +1,6 @@
 # Human Perception of Whole-Body Robot Motion
 
-Project website for our **CS 7633 (Fall 2026)** course project: a video-based user study comparing how people perceive robot motion retargeted with **WARP** and **MINK-TE**.
+Project website for our **CS 7633 (Fall 2026)** course project: a video-based user study comparing how people perceive robot motion retargeted with **WARP** and **Mink-based baselines**.
 
 **Live site:** https://zhangchuye.github.io/warp_hri/
 
