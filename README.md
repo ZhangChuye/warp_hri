@@ -1,0 +1,31 @@
+# Human Perception of Whole-Body Robot Motion
+
+Project website for our **CS 7633 (Fall 2026)** course project: a video-based user study comparing how people perceive robot motion retargeted with **WARP** and **MINK-TE**.
+
+**Live site:** https://zhangchuye.github.io/warp_hri/
+
+**Team:** Chuye Zhang, Jianuo Qiu, Shaoyu Zeng, Xinchen Yin
+
+## Preview locally
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+## Layout
+
+```
+index.html              single-page site
+assets/css/style.css    styles
+assets/js/main.js       scroll-lit story, hero animation, video chapters, robot callouts
+assets/img/             robot photo (WebP + JPEG), favicon, social preview
+assets/video/           WARP vs. MINK comparison clip + poster
+```
+
+No build step: plain HTML, CSS, and JavaScript, served by GitHub Pages from the `main` branch.
+
+## Credits
+
+- The comparison clip comes from the [WARP project page](https://warp-retargeting.github.io/) ([paper](https://arxiv.org/abs/2606.29940)).
+- The MINK baselines are built on [Mink](https://github.com/kevinzakka/mink).
