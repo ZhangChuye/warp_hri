@@ -4,8 +4,6 @@ Project website for our **CS 7633 (Fall 2026)** course project: a video-based us
 
 **Live site:** https://zhangchuye.github.io/warp_hri/
 
-**Team:** Chuye Zhang, Jianuo Qiu, Shaoyu Zeng, Xinchen Yin
-
 ## Preview locally
 
 ```bash

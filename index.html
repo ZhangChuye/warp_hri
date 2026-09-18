@@ -32,29 +32,11 @@
       <p class="course"><span>CS 7633 Human–Robot Interaction</span><span class="sep" aria-hidden="true"> · </span><span>Fall 2026</span></p>
       <h1>Human Perception of Whole-&#8288;Body Robot Motion</h1>
       <p class="subtitle">Comparing WARP and Mink-Based Retargeting</p>
-      <p class="authors">
-        <a href="https://zhangchuye.github.io/" target="_blank" rel="noopener">Chuye Zhang</a>,
-        <span>Jianuo Qiu</span>,
-        <span>Shaoyu Zeng</span>,
-        <span>Xinchen Yin</span>
-      </p>
       <p class="affil">Georgia Institute of Technology</p>
       <nav class="links" aria-label="Project links">
-        <a class="btn" href="https://github.com/ZhangChuye/warp_hri" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-          Code
-        </a>
         <a class="btn" href="https://arxiv.org/abs/2606.29940" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M4 1.8h5.2l3 3v9.4H4zM9 1.8V5h3.2M6 8.3h4.2M6 10.8h4.2"/></svg>
           WARP Paper
-        </a>
-        <a class="btn" href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.3"/><ellipse cx="8" cy="8" rx="2.7" ry="6.3"/><path d="M1.7 8h12.6"/></g></svg>
-          WARP Project
-        </a>
-        <a class="btn" href="https://github.com/kevinzakka/mink" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5.5 4 1.8 8l3.7 4M10.5 4l3.7 4-3.7 4"/></svg>
-          Mink
         </a>
       </nav>
     </div>
@@ -65,11 +47,6 @@
     <section class="section section-soft" id="motivation" aria-labelledby="motivation-title">
       <div class="wrap">
         <h2 id="motivation-title">Motivation</h2>
-        <p class="lead">
-          Human motion can be retargeted to robots. But matching an end-effector trajectory
-          does not tell us how that motion <em>feels</em> to people.
-        </p>
-
         <div class="slider" data-slider role="group" aria-roledescription="carousel" aria-label="Project overview">
           <button class="slider-arrow slider-prev" type="button" aria-label="Previous card">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -77,20 +54,20 @@
           <ol class="slider-track" tabindex="0">
             <li class="slide">
               <article class="card">
-                <p class="kicker">Research question</p>
-                <p>We compare two offline human-to-robot retargeting methods, <b>WARP</b> and <b class="nowrap">MINK-TE</b>, and ask: which motions look more <b>trustworthy, comfortable, natural, competent, and easy to understand</b>?</p>
+                <p class="kicker">Background</p>
+                <p>Offline human-to-robot motion retargeting converts human demonstrations into robot movements, typically with the goal of reproducing <b>task-space behavior</b>, such as end-effector trajectories, so that the robot achieves the same manipulation effect on the environment.</p>
               </article>
             </li>
             <li class="slide">
               <article class="card">
-                <p class="kicker">Study</p>
-                <p>Participants evaluate robot behaviors across a <b>diverse set of manipulation tasks</b>, using both <b>simulation</b> and <b>real-world</b> recordings.</p>
+                <p class="kicker">Gap</p>
+                <p>Such retargeted trajectories can therefore serve as offline robot demonstrations for downstream behavior cloning. However, task-space tracking accuracy alone does not establish whether people <b>trust</b> the robot, feel <b>comfortable</b> around it, or perceive its motion as <b>natural and understandable</b>.</p>
               </article>
             </li>
             <li class="slide">
               <article class="card">
-                <p class="kicker">Goal</p>
-                <p>Move beyond task-space accuracy and understand how retargeted robot motion is <b>perceived by humans</b>.</p>
+                <p class="kicker">This project</p>
+                <p>This project compares user perceptions of robot motions generated by two retargeting methods, <b>WARP</b> and <b class="nowrap">MINK-TE</b>, across several <b>HRI dimensions</b>. A diverse set of tasks from both <b>simulation and real-world recordings</b> will be used as study stimuli.</p>
               </article>
             </li>
           </ol>
@@ -121,7 +98,7 @@
           <figcaption>
             Left to right: reference human motion, <b>WARP</b>, and the Mink baseline, first tracking the end effector only
             (<span class="nowrap">MINK-EF</span>) and then with torso and elbow targets added (<span class="nowrap">MINK-TE</span>, the baseline in our study).
-            Video from the <a href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">WARP project page</a>.
+            Video from the WARP project.
           </figcaption>
         </figure>
 
@@ -183,12 +160,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p>
-        Course project for CS 7633 Human–Robot Interaction, Georgia Institute of Technology, Fall 2026.
-        The comparison video is from the <a href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">WARP project page</a>;
-        the MINK baselines build on <a href="https://github.com/kevinzakka/mink" target="_blank" rel="noopener">Mink</a>.
-      </p>
-      <p><a href="https://github.com/ZhangChuye/warp_hri" target="_blank" rel="noopener">Page source on GitHub</a></p>
+      <p>Course project for CS 7633 Human–Robot Interaction, Georgia Institute of Technology, Fall 2026.</p>
     </div>
   </footer>
 </body>
