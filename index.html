@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Human Perception of Whole-Body Robot Motion</title>
-  <meta name="description" content="CS 7633 course project: a video-based study of how people perceive whole-body robot motion retargeted with WARP and MINK-TE.">
-  <meta name="theme-color" content="#07080c">
+  <meta name="description" content="CS 7633 course project: a video-based user study of how people perceive whole-body robot motion retargeted with WARP and MINK-TE.">
+  <meta name="theme-color" content="#ffffff">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Human Perception of Whole-Body Robot Motion">
-  <meta property="og:description" content="Comparing WARP and Mink-based retargeting through the eyes of human observers.">
+  <meta property="og:description" content="Comparing WARP and Mink-based retargeting through a video-based user study.">
   <meta property="og:url" content="https://zhangchuye.github.io/warp_hri/">
   <meta property="og:image" content="https://zhangchuye.github.io/warp_hri/assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,236 +19,176 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#motivation">Skip to content</a>
 
-  <!-- ============ Navigation ============ -->
-  <header class="nav" id="nav">
-    <a class="nav-brand" href="#top" aria-label="Back to top">
-      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M7 9.5 13.5 22 25 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="7" cy="9.5" r="3.4" fill="#6cb0f5"/>
-        <circle cx="13.5" cy="22" r="3.4" fill="#fff"/>
-        <circle cx="25" cy="12" r="3.4" fill="#ff9d5c"/>
-      </svg>
-      <span>WARP <span class="x">×</span> HRI</span>
-    </a>
-    <nav class="nav-links" aria-label="Sections">
-      <a href="#motivation">Motivation</a>
-      <a href="#comparison">Comparison</a>
-      <a href="#robot">Robot</a>
-      <a href="#team">Team</a>
-    </nav>
-    <a class="nav-icon" href="https://github.com/ZhangChuye/warp_hri" target="_blank" rel="noopener" aria-label="GitHub repository">
-      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-    </a>
+  <!-- ============ Title block ============ -->
+  <header class="masthead">
+    <div class="wrap">
+      <p class="course"><span>CS 7633 Human–Robot Interaction</span><span class="sep" aria-hidden="true"> · </span><span>Fall 2026</span></p>
+      <h1>Human Perception of Whole-&#8288;Body Robot Motion</h1>
+      <p class="subtitle">Comparing WARP and Mink-Based Retargeting</p>
+      <p class="authors">
+        <a href="https://zhangchuye.github.io/" target="_blank" rel="noopener">Chuye Zhang</a>,
+        <span>Jianuo Qiu</span>,
+        <span>Shaoyu Zeng</span>,
+        <span>Xinchen Yin</span>
+      </p>
+      <p class="affil">Georgia Institute of Technology</p>
+      <nav class="links" aria-label="Project links">
+        <a class="btn" href="https://github.com/ZhangChuye/warp_hri" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Code
+        </a>
+        <a class="btn" href="https://arxiv.org/abs/2606.29940" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M4 1.8h5.2l3 3v9.4H4zM9 1.8V5h3.2M6 8.3h4.2M6 10.8h4.2"/></svg>
+          WARP Paper
+        </a>
+        <a class="btn" href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="6.3"/><ellipse cx="8" cy="8" rx="2.7" ry="6.3"/><path d="M1.7 8h12.6"/></g></svg>
+          WARP Project
+        </a>
+        <a class="btn" href="https://github.com/kevinzakka/mink" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5.5 4 1.8 8l3.7 4M10.5 4l3.7 4-3.7 4"/></svg>
+          Mink
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <!-- ============ Hero ============ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>CS 7633<span class="hide-sm"> · Human–Robot Interaction</span> · Fall 2026</p>
-          <h1 id="hero-title">Human <em>Perception</em><br> of <span class="nowrap">Whole-Body</span><br> Robot Motion</h1>
-          <p class="hero-sub">Comparing <span class="c-warp">WARP</span> and <span class="c-mink">Mink</span>-based retargeting</p>
-          <p class="authors">
-            <a href="https://zhangchuye.github.io/" target="_blank" rel="noopener">Chuye Zhang</a><span class="sep" aria-hidden="true">·</span>
-            <span>Jianuo Qiu</span><span class="sep" aria-hidden="true">·</span>
-            <span>Shaoyu Zeng</span><span class="sep" aria-hidden="true">·</span>
-            <span>Xinchen Yin</span>
-          </p>
-          <p class="affil">Georgia Institute of Technology</p>
-          <div class="cta">
-            <a class="btn btn-light" href="#comparison">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.6v10.8a.6.6 0 0 0 .9.52l9-5.4a.6.6 0 0 0 0-1.04l-9-5.4A.6.6 0 0 0 4 2.6z"/></svg>
-              Watch the comparison
-            </a>
-            <a class="btn btn-ghost" href="#robot">Meet the robot</a>
-          </div>
-        </div>
+  <main>
+    <!-- ============ Motivation ============ -->
+    <section class="section section-soft" id="motivation" aria-labelledby="motivation-title">
+      <div class="wrap">
+        <h2 id="motivation-title">Motivation</h2>
+        <p class="lead">
+          Human motion can be retargeted to robots. But matching an end-effector trajectory
+          does not tell us how that motion <em>feels</em> to people.
+        </p>
 
-        <figure class="hero-art">
-          <canvas class="arm-canvas" width="396" height="406" role="img"
-                  aria-label="Animated diagram: two robot arms whose hands trace the same figure-eight path while their elbows move along different paths."></canvas>
+        <div class="slider" data-slider role="group" aria-roledescription="carousel" aria-label="Project overview">
+          <button class="slider-arrow slider-prev" type="button" aria-label="Previous card">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ol class="slider-track" tabindex="0">
+            <li class="slide">
+              <article class="card">
+                <p class="kicker">Research question</p>
+                <p>We compare two offline human-to-robot retargeting methods, <b>WARP</b> and <b class="nowrap">MINK-TE</b>, and ask: which motions look more <b>trustworthy, comfortable, natural, competent, and easy to understand</b>?</p>
+              </article>
+            </li>
+            <li class="slide">
+              <article class="card">
+                <p class="kicker">Study</p>
+                <p>Participants evaluate robot behaviors across a <b>diverse set of manipulation tasks</b>, using both <b>simulation</b> and <b>real-world</b> recordings.</p>
+              </article>
+            </li>
+            <li class="slide">
+              <article class="card">
+                <p class="kicker">Goal</p>
+                <p>Move beyond task-space accuracy and understand how retargeted robot motion is <b>perceived by humans</b>.</p>
+              </article>
+            </li>
+          </ol>
+          <button class="slider-arrow slider-next" type="button" aria-label="Next card">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="slider-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Retargeting methods ============ -->
+    <section class="section" id="methods" aria-labelledby="methods-title">
+      <div class="wrap">
+        <h2 id="methods-title">Retargeting Methods</h2>
+        <p class="lead">
+          Both methods follow the same human demonstration with the robot’s hands. They differ in how
+          the rest of the body (torso, elbows, overall posture) is resolved, and that difference is what participants see.
+        </p>
+
+        <figure class="figure">
+          <video id="cmp-video" controls muted loop playsinline preload="metadata"
+                 poster="assets/video/warp_vs_mink_poster.jpg"
+                 aria-label="Simulation video: reference human motion, WARP retargeting, and the Mink baseline on the RB-Y1 robot, side by side.">
+            <source src="assets/video/warp_vs_mink.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
           <figcaption>
-            <span class="lg-item"><span class="lg lg-path" aria-hidden="true"></span>Same end-effector path</span>
-            <span class="lg-item"><span class="lg lg-a" aria-hidden="true"></span><span class="lg lg-b" aria-hidden="true"></span>Different arm motion</span>
+            Left to right: reference human motion, <b>WARP</b>, and the Mink baseline, first tracking the end effector only
+            (<span class="nowrap">MINK-EF</span>) and then with torso and elbow targets added (<span class="nowrap">MINK-TE</span>, the baseline in our study).
+            Video from the <a href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">WARP project page</a>.
           </figcaption>
         </figure>
-      </div>
-      <a class="scroll-cue" href="#motivation" aria-label="Scroll to motivation"><span></span></a>
-    </section>
 
-    <!-- ============ Motivation (scroll-lit story) ============ -->
-    <section class="story" id="motivation" aria-labelledby="story-title">
-      <div class="wrap story-wrap">
-        <h2 class="kicker" id="story-title">Motivation</h2>
-        <div class="beats">
-          <div class="beats-rail" aria-hidden="true"><span class="beats-fill"></span></div>
-          <p class="beat" data-lit>Human motion can be retargeted to robots.</p>
-          <p class="beat" data-lit>But matching an end-effector trajectory does not tell us how that motion <em>feels</em> to people.</p>
-          <p class="beat" data-lit>We compare two offline human-to-robot retargeting methods, <span class="tok tok-warp">WARP</span> and <span class="nowrap"><span class="tok tok-mink">MINK-TE</span>,</span> and&nbsp;ask:</p>
-          <p class="beat beat-q" data-lit>Which motions look more <span class="dim">trustworthy</span>, <span class="dim">comfortable</span>, <span class="dim">natural</span>, <span class="dim">competent</span>, and <span class="dim">easy to understand</span>?</p>
-          <p class="beat" data-lit>Participants evaluate robot behaviors across a diverse set of manipulation tasks, using both <em>simulation</em> and <em>real-world</em> recordings.</p>
-          <p class="beat" data-lit>The goal is simple: move beyond task-space accuracy and understand how retargeted robot motion is <span class="grad">perceived by humans</span>.</p>
+        <div class="methods">
+          <article class="card method method-warp">
+            <p class="kicker">Closed-form retargeting</p>
+            <h3>WARP</h3>
+            <p>Matches the palm pose exactly as a hard constraint, then uses the remaining freedom to preserve the human’s shoulder–elbow–wrist posture. Joint angles follow analytically, giving one unique solution per frame.</p>
+          </article>
+          <article class="card method method-mink">
+            <p class="kicker">Optimization-based IK</p>
+            <h3>MINK-TE</h3>
+            <p>Weighted inverse kinematics built on the Mink library: palm-pose tracking combined with torso-orientation and elbow-swivel objectives. <span class="nowrap">MINK-EF</span> is the variant that tracks the end effector only.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <div class="sheet">
-      <!-- ============ Comparison video ============ -->
-      <section class="section" id="comparison" aria-labelledby="cmp-title">
-        <div class="wrap">
-          <header class="sec-head" data-reveal>
-            <p class="kicker">The comparison</p>
-            <h2 id="cmp-title">One human motion, <em>two</em> robot motions.</h2>
-            <p class="lead">Both methods start from the same human demonstration and drive the robot’s hands to follow it. They differ in how the rest of the body — torso, elbows, overall posture — is resolved, and that is what participants see.</p>
-          </header>
+    <!-- ============ Robot platform ============ -->
+    <section class="section section-soft" id="robot" aria-labelledby="robot-title">
+      <div class="wrap robot" id="robot-figure">
+        <div class="robot-intro">
+          <h2 id="robot-title">Robot Platform</h2>
+          <p>
+            The robot in our study is the <b>Rainbow Robotics <span class="nowrap">RB-Y1</span></b>, a wheeled humanoid whose kinematics mirror the human upper body.
+            Like a person, it is kinematically redundant: the same hand pose can be reached with many different arm and torso postures.
+            Each retargeting method has to choose one, and that choice is what observers see.
+          </p>
+        </div>
 
-          <figure class="player" data-reveal>
-            <div class="player-frame">
-              <video id="cmp-video" muted loop playsinline preload="metadata"
-                     poster="assets/video/warp_vs_mink_poster.jpg"
-                     aria-label="Simulation clip: reference human motion, WARP retargeting, and the Mink baseline on the RB-Y1 robot, side by side.">
-                <source src="assets/video/warp_vs_mink.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="player-bar">
-              <button class="pbtn" id="cmp-play" type="button" aria-label="Play video">
-                <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.6v10.8a.6.6 0 0 0 .9.52l9-5.4a.6.6 0 0 0 0-1.04l-9-5.4A.6.6 0 0 0 4 2.6z"/></svg>
-                <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3.2" height="11" rx="1"/><rect x="9.3" y="2.5" width="3.2" height="11" rx="1"/></svg>
-              </button>
-              <div class="chapters" role="group" aria-label="Chapters">
-                <button class="chapter" type="button" data-start="0" data-end="7.55" style="--grow:7.55">
-                  <span class="ch-time">0:00</span><span class="ch-name"><span class="ch-long">End-effector only</span><span class="ch-short">EEF only</span></span><span class="ch-fill" aria-hidden="true"></span>
-                </button>
-                <button class="chapter" type="button" data-start="7.6" data-end="16.97" style="--grow:9.37">
-                  <span class="ch-time">0:08</span><span class="ch-name"><span class="ch-long">+ Torso &amp; elbow targets</span><span class="ch-short">+ Torso &amp; elbow</span></span><span class="ch-fill" aria-hidden="true"></span>
-                </button>
-                <button class="chapter" type="button" data-start="17" data-end="23.28" style="--grow:6.28">
-                  <span class="ch-time">0:17</span><span class="ch-name">Takeaway</span><span class="ch-fill" aria-hidden="true"></span>
-                </button>
-              </div>
-              <button class="pbtn pbtn-text" id="cmp-speed" type="button" aria-label="Toggle slow motion" aria-pressed="false">1×</button>
-              <button class="pbtn" id="cmp-full" type="button" aria-label="Full screen">
-                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2.8c0-.44.36-.8.8-.8H6M10 2h3.2c.44 0 .8.36.8.8V6M14 10v3.2c0 .44-.36.8-.8.8H10M6 14H2.8a.8.8 0 0 1-.8-.8V10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </button>
-            </div>
-            <figcaption>
-              Left to right: reference human motion, <b class="c-warp">WARP</b>, and the Mink baseline — first tracking the end effector only (<span class="nowrap">MINK-EF</span>), then with torso and elbow targets added (<span class="nowrap">MINK-TE</span>, the baseline in our study).
-              Clip from the <a href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">WARP project page</a>.
-            </figcaption>
-          </figure>
-
-          <div class="methods">
-            <article class="method method-warp" data-reveal>
-              <p class="method-kind">Closed-form retargeting</p>
-              <h3>WARP</h3>
-              <p>Matches the palm exactly as a hard constraint, then spends the remaining freedom preserving the human’s shoulder–elbow–wrist pose. Joint angles follow analytically: one unique solution per frame.</p>
-              <a class="more" href="https://arxiv.org/abs/2606.29940" target="_blank" rel="noopener">WARP paper <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="method method-mink" data-reveal>
-              <p class="method-kind">Optimization-based IK</p>
-              <h3>MINK-TE</h3>
-              <p>Weighted inverse kinematics built on Mink: palm-pose tracking plus torso-orientation and elbow-swivel objectives. MINK-EF, the end-effector-only variant, opens the clip.</p>
-              <a class="more" href="https://github.com/kevinzakka/mink" target="_blank" rel="noopener">Mink library <span aria-hidden="true">↗</span></a>
-            </article>
+        <figure class="robot-photo">
+          <div class="robot-frame">
+            <picture>
+              <source srcset="assets/img/rby1.webp" type="image/webp">
+              <img src="assets/img/rby1.jpg" width="671" height="964" loading="lazy" decoding="async"
+                   alt="The RB-Y1 wheeled humanoid in a kitchen: two arms with five-fingered hands, a head carrying Project Aria glasses, a segmented torso, and a black mobile base.">
+            </picture>
+            <span class="marker" data-part="aria"  style="--x:55.74%;--y:7.68%"  aria-hidden="true">1</span>
+            <span class="marker" data-part="neck"  style="--x:53.8%;--y:13.8%"   aria-hidden="true">2</span>
+            <span class="marker" data-part="xhand" style="--x:23.7%;--y:8.3%"    aria-hidden="true">3</span>
+            <span class="marker" data-part="arm"   style="--x:25.93%;--y:23.34%" aria-hidden="true">4</span>
+            <span class="marker" data-part="torso" style="--x:56.18%;--y:48.76%" aria-hidden="true">5</span>
+            <span class="marker" data-part="base"  style="--x:34.87%;--y:89.21%" aria-hidden="true">6</span>
           </div>
-        </div>
-      </section>
+          <figcaption>The <span class="nowrap">RB-Y1</span> platform used in the WARP real-world experiments.</figcaption>
+        </figure>
 
-      <!-- ============ Robot ============ -->
-      <section class="section section-robot" id="robot" aria-labelledby="robot-title">
-        <div class="wrap">
-          <header class="sec-head" data-reveal>
-            <p class="kicker">The robot</p>
-            <h2 id="robot-title">Rainbow Robotics <span class="model">RB-Y1</span></h2>
-            <p class="lead">A wheeled humanoid whose kinematics mirror the human upper body, so whole-body demonstrations map onto it naturally. Like a person, it is redundant: the same hand pose can be reached with many different arm and torso postures, and each retargeting method picks one.</p>
-          </header>
-
-          <figure class="rb" data-reveal>
-            <div class="rb-stage" id="rb-stage">
-              <svg class="rb-lines" viewBox="0 0 1160 760" preserveAspectRatio="none" aria-hidden="true">
-                <g data-part="aria"><path class="halo" d="M610.4 58.3V36H877"/><path class="ln" d="M610.4 58.3V36H877"/></g>
-                <g data-part="xhand"><path class="halo" d="M440.9 63.1H283"/><path class="ln" d="M440.9 63.1H283"/></g>
-                <g data-part="neck"><path class="halo" d="M600.1 104.9V128H877"/><path class="ln" d="M600.1 104.9V128H877"/></g>
-                <g data-part="arm"><path class="halo" d="M452.7 177.4H283"/><path class="ln" d="M452.7 177.4H283"/></g>
-                <g data-part="torso"><path class="halo" d="M612.7 370.5H877"/><path class="ln" d="M612.7 370.5H877"/></g>
-                <g data-part="base"><path class="halo" d="M500 678H283"/><path class="ln" d="M500 678H283"/></g>
-              </svg>
-
-              <div class="rb-photo">
-                <picture>
-                  <source srcset="assets/img/rby1.webp" type="image/webp">
-                  <img src="assets/img/rby1.jpg" width="671" height="964" loading="lazy" decoding="async"
-                       alt="The RB-Y1 wheeled humanoid standing in a kitchen: two arms with five-fingered hands, a sensor-carrying head with Project Aria glasses, a segmented torso, and a black mobile base.">
-                </picture>
-                <button class="pin" type="button" data-part="aria"  style="--x:55.74%;--y:7.68%;--i:0"  aria-label="Project Aria Gen 2"><span>1</span></button>
-                <button class="pin" type="button" data-part="xhand" style="--x:23.7%;--y:8.3%;--i:1"    aria-label="12-DoF XHand"><span>2</span></button>
-                <button class="pin" type="button" data-part="neck"  style="--x:53.8%;--y:13.8%;--i:2"   aria-label="2-DoF neck"><span>3</span></button>
-                <button class="pin" type="button" data-part="arm"   style="--x:25.93%;--y:23.34%;--i:3" aria-label="7-DoF arms"><span>4</span></button>
-                <button class="pin" type="button" data-part="torso" style="--x:56.18%;--y:48.76%;--i:4" aria-label="6-DoF torso"><span>5</span></button>
-                <button class="pin" type="button" data-part="base"  style="--x:34.87%;--y:89.21%;--i:5" aria-label="Holonomic base"><span>6</span></button>
-              </div>
-
-              <ol class="rb-parts">
-                <li class="rb-part is-right" data-part="aria" style="--ly:4.74%" tabindex="0">
-                  <span class="rb-num">01</span>
-                  <span class="rb-txt"><strong>Project Aria Gen 2</strong><span>Head-mounted egocentric sensing</span></span>
-                </li>
-                <li class="rb-part is-left" data-part="xhand" style="--ly:8.3%" tabindex="0">
-                  <span class="rb-num">02</span>
-                  <span class="rb-txt"><strong>12-DoF XHand</strong><span>Five-fingered dexterous hands</span></span>
-                </li>
-                <li class="rb-part is-right" data-part="neck" style="--ly:16.84%" tabindex="0">
-                  <span class="rb-num">03</span>
-                  <span class="rb-txt"><strong>2-DoF neck</strong><span>Points the head and its sensors</span></span>
-                </li>
-                <li class="rb-part is-left" data-part="arm" style="--ly:23.34%" tabindex="0">
-                  <span class="rb-num">04</span>
-                  <span class="rb-txt"><strong>Two 7-DoF arms</strong><span>One hand pose, many elbow poses</span></span>
-                </li>
-                <li class="rb-part is-right" data-part="torso" style="--ly:48.76%" tabindex="0">
-                  <span class="rb-num">05</span>
-                  <span class="rb-txt"><strong>6-DoF torso</strong><span>Moves the upper body without moving the base</span></span>
-                </li>
-                <li class="rb-part is-left" data-part="base" style="--ly:89.21%" tabindex="0">
-                  <span class="rb-num">06</span>
-                  <span class="rb-txt"><strong>Holonomic base</strong><span>Drives in any direction across the floor</span></span>
-                </li>
-              </ol>
-            </div>
-            <figcaption>The RB-Y1 platform from the WARP real-world experiments, commanded with joint-impedance control at 100&nbsp;Hz.</figcaption>
-          </figure>
-        </div>
-      </section>
-    </div>
+        <ol class="specs">
+          <li data-part="aria"><span class="num" aria-hidden="true">1</span><div><strong>Project Aria Gen 2 glasses</strong><span>Head-mounted egocentric sensing</span></div></li>
+          <li data-part="neck"><span class="num" aria-hidden="true">2</span><div><strong>2-DoF neck</strong><span>Orients the head and its sensors</span></div></li>
+          <li data-part="xhand"><span class="num" aria-hidden="true">3</span><div><strong>12-DoF XHands</strong><span>Five-fingered dexterous hands</span></div></li>
+          <li data-part="arm"><span class="num" aria-hidden="true">4</span><div><strong>Two 7-DoF arms</strong><span>Redundant: one hand pose admits many elbow poses</span></div></li>
+          <li data-part="torso"><span class="num" aria-hidden="true">5</span><div><strong>6-DoF torso</strong><span>Repositions the upper body without moving the base</span></div></li>
+          <li data-part="base"><span class="num" aria-hidden="true">6</span><div><strong>Holonomic mobile base</strong><span>Drives in any direction across the floor</span></div></li>
+        </ol>
+      </div>
+    </section>
   </main>
 
-  <!-- ============ Team / footer ============ -->
-  <footer class="footer" id="team" aria-labelledby="team-title">
+  <footer class="footer">
     <div class="wrap">
-      <h2 class="kicker" id="team-title">Team</h2>
-      <ul class="team">
-        <li><span class="av" aria-hidden="true">CZ</span><a href="https://zhangchuye.github.io/" target="_blank" rel="noopener">Chuye Zhang</a></li>
-        <li><span class="av" aria-hidden="true">JQ</span><span>Jianuo Qiu</span></li>
-        <li><span class="av" aria-hidden="true">SZ</span><span>Shaoyu Zeng</span></li>
-        <li><span class="av" aria-hidden="true">XY</span><span>Xinchen Yin</span></li>
-      </ul>
-
-      <p class="footer-mark" aria-hidden="true">WARP <span>×</span> HRI</p>
-
-      <div class="foot-bottom">
-        <p>CS 7633 · Human–Robot Interaction · Fall 2026</p>
-        <p>Comparison clip from the <a href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">WARP project</a> · Baseline built on <a href="https://github.com/kevinzakka/mink" target="_blank" rel="noopener">Mink</a></p>
-        <p><a href="https://github.com/ZhangChuye/warp_hri" target="_blank" rel="noopener">Source on GitHub</a> · <a href="#top">Back to top ↑</a></p>
-      </div>
+      <p>
+        Course project for CS 7633 Human–Robot Interaction, Georgia Institute of Technology, Fall 2026.
+        The comparison video is from the <a href="https://warp-retargeting.github.io/" target="_blank" rel="noopener">WARP project page</a>;
+        the MINK baselines build on <a href="https://github.com/kevinzakka/mink" target="_blank" rel="noopener">Mink</a>.
+      </p>
+      <p><a href="https://github.com/ZhangChuye/warp_hri" target="_blank" rel="noopener">Page source on GitHub</a></p>
     </div>
   </footer>
 </body>

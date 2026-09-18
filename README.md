@@ -18,7 +18,7 @@ python3 -m http.server 8000
 ```
 index.html              single-page site
 assets/css/style.css    styles
-assets/js/main.js       scroll-lit story, hero animation, video chapters, robot callouts
+assets/js/main.js       sliding motivation cards, video autoplay in view, robot figure highlights
 assets/img/             robot photo (WebP + JPEG), favicon, social preview
 assets/video/           WARP vs. MINK comparison clip + poster
 ```
